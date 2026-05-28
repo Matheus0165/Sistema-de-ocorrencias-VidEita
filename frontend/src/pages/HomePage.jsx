@@ -23,17 +23,17 @@ const stats = [
 ]
 
 const features = [
-  { icon: <FileText size={28}/>, title: 'É simples',   desc: 'Faça sua denúncia em poucos minutos.' },
+  { icon: <FileText size={28}/>, title: 'É simples',   desc: 'Faça sua Ocorrência em poucos minutos.' },
   { icon: <Shield size={28}/>,   title: 'É seguro',    desc: 'Seus dados são protegidos e sua identidade preservada.' },
   { icon: <Eye size={28}/>,      title: 'É sigiloso',  desc: 'Acompanhamento discreto e com total confidencialidade.' },
   { icon: <Users size={28}/>,    title: 'É para todos', desc: 'Um canal aberto para cuidar da nossa cidade juntos.' },
 ]
 
 const steps = [
-  { n:'1', icon: <FileText size={28}/>, title:'Você faz a denúncia',      desc:'Preencha o formulário com as informações da ocorrência.' },
-  { n:'2', icon: <Send size={28}/>,     title:'Recebemos e encaminhamos',  desc:'Sua denúncia é analisada e enviada ao órgão competente.' },
+  { n:'1', icon: <FileText size={28}/>, title:'Você faz a Ocorrência',      desc:'Preencha o formulário com as informações da ocorrência.' },
+  { n:'2', icon: <Send size={28}/>,     title:'Recebemos e encaminhamos',  desc:'Sua Ocorrência é analisada e enviada ao órgão competente.' },
   { n:'3', icon: <Search size={28}/>,   title:'Órgão investiga',           desc:'O órgão responsável avalia e toma as providências cabíveis.' },
-  { n:'4', icon: <Bell size={28}/>,     title:'Você acompanha',            desc:'Acompanhe o andamento da sua denúncia de forma simples e segura.' },
+  { n:'4', icon: <Bell size={28}/>,     title:'Você acompanha',            desc:'Acompanhe o andamento da sua Ocorrência de forma simples e segura.' },
 ]
 
 export default function HomePage() {
@@ -67,7 +67,7 @@ export default function HomePage() {
             </p>
             <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
               <Link to="/nova-ocorrencia" style={{ display:'inline-flex', alignItems:'center', gap:8, background:'var(--brand)', color:'white', padding:'13px 24px', borderRadius:10, fontSize:15, fontWeight:600, transition:'all .2s', boxShadow:'0 4px 16px rgba(107,63,160,.3)' }}>
-                Fazer denúncia <ArrowRight size={16}/>
+                Fazer Ocorrência <ArrowRight size={16}/>
               </Link>
               <a href="#como-funciona" style={{ display:'inline-flex', alignItems:'center', gap:8, background:'var(--bg2)', color:'var(--text)', border:'1px solid var(--border)', padding:'13px 24px', borderRadius:10, fontSize:15, fontWeight:500 }}>
                 Saiba mais <ChevronDown size={16}/>

@@ -74,7 +74,7 @@ export default function NewReportPage() {
       setProtocol(`#VB-${new Date().getFullYear()}-${id.substring(0,5).toUpperCase()}`)
       setStep(4)
     } catch (err) {
-      toast.error(err.response?.data?.mensagem || 'Erro ao criar denúncia')
+      toast.error(err.response?.data?.mensagem || 'Erro ao criar Ocorrência')
     } finally { setLoading(false) }
   }
 
@@ -87,19 +87,19 @@ export default function NewReportPage() {
           <div style={{ width:72,height:72,borderRadius:'50%',background:'var(--brand-dim)',border:'2px solid var(--brand)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 24px' }}>
             <CheckCircle size={36} color="var(--brand)"/>
           </div>
-          <h2 style={{ fontFamily:'var(--font-display)', fontSize:28, fontWeight:800, marginBottom:8 }}>Denúncia enviada!</h2>
-          <p style={{ color:'var(--text2)', fontSize:15, marginBottom:28 }}>Obrigado por contribuir com a sua cidade. Sua denúncia foi recebida com sucesso.</p>
+          <h2 style={{ fontFamily:'var(--font-display)', fontSize:28, fontWeight:800, marginBottom:8 }}>Ocorrência enviada!</h2>
+          <p style={{ color:'var(--text2)', fontSize:15, marginBottom:28 }}>Obrigado por contribuir com a sua cidade. Sua Ocorrência foi recebida com sucesso.</p>
           <div style={{ background:'var(--bg3)', borderRadius:14, padding:24, marginBottom:28, border:'1px solid var(--border)' }}>
             <p style={{ fontSize:13, color:'var(--text3)', marginBottom:8 }}>Protocolo</p>
             <p style={{ fontFamily:'var(--font-display)', fontSize:28, fontWeight:800, color:'var(--brand)', letterSpacing:1 }}>{protocol}</p>
-            <p style={{ fontSize:12, color:'var(--text3)', marginTop:8 }}>Guarde este número para acompanhar o andamento da sua denúncia.</p>
+            <p style={{ fontSize:12, color:'var(--text3)', marginTop:8 }}>Guarde este número para acompanhar o andamento da sua Ocorrência.</p>
           </div>
           <div style={{ display:'flex', gap:10 }}>
             <button onClick={()=>navigate('/minhas-Ocorrência')} style={{ flex:1, padding:'12px 0', background:'var(--brand)', color:'white', border:'none', borderRadius:10, fontSize:14, fontWeight:600, cursor:'pointer', fontFamily:'var(--font-body)' }}>
-              Acompanhar denúncia
+              Acompanhar Ocorrência
             </button>
             <button onClick={()=>{ setStep(0);setCat('');setTitulo('');setDesc('');setPos(null);setImg(null);setPreview(null) }} style={{ flex:1, padding:'12px 0', background:'var(--bg2)', color:'var(--text)', border:'1px solid var(--border)', borderRadius:10, fontSize:14, fontWeight:600, cursor:'pointer', fontFamily:'var(--font-body)' }}>
-              Fazer nova denúncia
+              Fazer nova Ocorrência
             </button>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function NewReportPage() {
 
         <div className="slide-in" style={{ background:'var(--bg2)', borderRadius:20, border:'1px solid var(--border)', overflow:'hidden', boxShadow:'var(--shadow)' }}>
           <div style={{ padding:'28px 32px', borderBottom:'1px solid var(--border)' }}>
-            <h2 style={{ fontFamily:'var(--font-display)', fontSize:22, fontWeight:800, marginBottom:4 }}>Nova denúncia</h2>
+            <h2 style={{ fontFamily:'var(--font-display)', fontSize:22, fontWeight:800, marginBottom:4 }}>Nova Ocorrência</h2>
             <p style={{ color:'var(--text3)', fontSize:13 }}>Preencha as informações abaixo para nos ajudar a entender melhor a ocorrência.</p>
           </div>
 
@@ -142,7 +142,7 @@ export default function NewReportPage() {
             {/* Step 0: categoria */}
             {step===0&&(
               <div>
-                <p style={{ fontSize:13, fontWeight:600, color:'var(--text2)', marginBottom:14, letterSpacing:.3 }}>CATEGORIA DA DENÚNCIA</p>
+                <p style={{ fontSize:13, fontWeight:600, color:'var(--text2)', marginBottom:14, letterSpacing:.3 }}>CATEGORIA DA OCORRÊNCIA</p>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
                   {CATS.map(c=>(
                     <button key={c.v} onClick={()=>setCat(c.v)} style={{ padding:'14px 16px', borderRadius:10, border:`1.5px solid ${cat===c.v?'var(--brand)':'var(--border)'}`, background:cat===c.v?'var(--brand-dim)':'var(--bg3)', cursor:'pointer', display:'flex', alignItems:'center', gap:10, fontSize:14, color:cat===c.v?'var(--brand)':'var(--text)', fontFamily:'var(--font-body)', fontWeight:cat===c.v?600:400, transition:'all .15s', textAlign:'left' }}>
@@ -157,7 +157,7 @@ export default function NewReportPage() {
             {step===1&&(
               <div style={{ display:'flex', flexDirection:'column', gap:20 }}>
                 <Field label="Título">
-                  <input type="text" placeholder="Resuma sua denúncia em poucas palavras" value={titulo} onChange={e=>setTitulo(e.target.value)} required maxLength={150} style={inp}/>
+                  <input type="text" placeholder="Resuma sua Ocorrência em poucas palavras" value={titulo} onChange={e=>setTitulo(e.target.value)} required maxLength={150} style={inp}/>
                 </Field>
                 <Field label="Descrição">
                   <textarea placeholder="Descreva o que aconteceu com o máximo de detalhes possível" value={desc} onChange={e=>setDesc(e.target.value)} rows={4} maxLength={1000} style={{ ...inp, resize:'vertical', minHeight:100 }}/>
@@ -250,7 +250,7 @@ export default function NewReportPage() {
             ):(
               <button onClick={submit} disabled={loading} style={{ display:'flex', alignItems:'center', gap:8, padding:'10px 22px', background:loading?'var(--surface)':'var(--brand)', border:'none', borderRadius:9, color:loading?'var(--text3)':'white', cursor:loading?'not-allowed':'pointer', fontSize:14, fontWeight:600, fontFamily:'var(--font-body)', boxShadow:loading?'none':'0 3px 12px rgba(107,63,160,.3)' }}>
                 {loading&&<Loader size={14} style={{ animation:'spin .8s linear infinite' }}/>}
-                {loading?'Enviando...':'Enviar denúncia'}
+                {loading?'Enviando...':'Enviar Ocorrência'}
               </button>
             )}
           </div>

@@ -103,7 +103,7 @@ export default function MapPage() {
               ? <Loader size={13} style={{ animation:'spin .8s linear infinite', color:'var(--brand)' }}/>
               : <MapPin size={13} style={{ color:'var(--brand)' }}/>
             }
-            {loading ? 'Carregando...' : `${reports.length} denúncia${reports.length!==1?'s':''} em Videira`}
+            {loading ? 'Carregando...' : `${reports.length} Ocorrência${reports.length!==1?'s':''} em Videira`}
           </div>
 
           <button onClick={fetch} disabled={loading} style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:9, padding:'8px 10px', cursor:'pointer', boxShadow:'var(--shadow)', color:'var(--text2)' }}>
@@ -130,10 +130,10 @@ export default function MapPage() {
 
         {/* FAB */}
         {user && (
-          <Link to="/nova-denuncia" style={{ position:'absolute', bottom:28, right:20, zIndex:1000, background:'var(--brand)', color:'white', borderRadius:14, padding:'12px 20px', fontFamily:'var(--font-display)', fontSize:14, fontWeight:700, display:'flex', alignItems:'center', gap:8, boxShadow:'0 4px 20px rgba(107,63,160,.4)', textDecoration:'none', transition:'all .2s' }}
+          <Link to="/nova-Ocorrencia" style={{ position:'absolute', bottom:28, right:20, zIndex:1000, background:'var(--brand)', color:'white', borderRadius:14, padding:'12px 20px', fontFamily:'var(--font-display)', fontSize:14, fontWeight:700, display:'flex', alignItems:'center', gap:8, boxShadow:'0 4px 20px rgba(107,63,160,.4)', textDecoration:'none', transition:'all .2s' }}
             onMouseEnter={e=>{ e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 6px 28px rgba(107,63,160,.5)' }}
             onMouseLeave={e=>{ e.currentTarget.style.transform='none';            e.currentTarget.style.boxShadow='0 4px 20px rgba(107,63,160,.4)' }}>
-            <Plus size={17} strokeWidth={2.5}/> Nova Denúncia
+            <Plus size={17} strokeWidth={2.5}/> Nova Ocorrencia
           </Link>
         )}
 

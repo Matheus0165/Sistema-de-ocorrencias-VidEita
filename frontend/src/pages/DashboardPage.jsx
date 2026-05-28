@@ -45,8 +45,8 @@ export default function DashboardPage() {
 
         {/* Sidebar */}
         <aside>
-          <Link to="/nova-denuncia" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, width:'100%', padding:'12px 0', background:'var(--brand)', color:'white', borderRadius:10, fontSize:14, fontWeight:700, fontFamily:'var(--font-display)', marginBottom:20, boxShadow:'0 4px 16px rgba(107,63,160,.3)', textDecoration:'none', transition:'all .2s' }}>
-            <Plus size={16}/> Nova denúncia
+          <Link to="/nova-Ocorrência" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, width:'100%', padding:'12px 0', background:'var(--brand)', color:'white', borderRadius:10, fontSize:14, fontWeight:700, fontFamily:'var(--font-display)', marginBottom:20, boxShadow:'0 4px 16px rgba(107,63,160,.3)', textDecoration:'none', transition:'all .2s' }}>
+            <Plus size={16}/> Nova Ocorrência
           </Link>
           <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:14, overflow:'hidden' }}>
             {[
@@ -117,12 +117,12 @@ export default function DashboardPage() {
           ) : filtered.length===0 ? (
             <div style={{ textAlign:'center', padding:60, background:'var(--bg2)', borderRadius:16, border:'1px solid var(--border)' }}>
               <p style={{ fontSize:32, marginBottom:12 }}>📋</p>
-              <p style={{ fontFamily:'var(--font-display)', fontSize:16, fontWeight:700, marginBottom:6 }}>Nenhuma denúncia encontrada</p>
+              <p style={{ fontFamily:'var(--font-display)', fontSize:16, fontWeight:700, marginBottom:6 }}>Nenhuma Ocorrência encontrada</p>
               <p style={{ color:'var(--text3)', fontSize:13, marginBottom:20 }}>
-                {tab==='todos' ? 'Você ainda não fez nenhuma denúncia.' : 'Nenhuma denúncia nessa categoria.'}
+                {tab==='todos' ? 'Você ainda não fez nenhuma Ocorrência.' : 'Nenhuma Ocorrência nessa categoria.'}
               </p>
-              <Link to="/nova-denuncia" style={{ display:'inline-flex', alignItems:'center', gap:6, background:'var(--brand)', color:'white', padding:'10px 20px', borderRadius:9, fontSize:14, fontWeight:600, textDecoration:'none' }}>
-                <Plus size={14}/> Fazer primeira denúncia
+              <Link to="/nova-Ocorrência" style={{ display:'inline-flex', alignItems:'center', gap:6, background:'var(--brand)', color:'white', padding:'10px 20px', borderRadius:9, fontSize:14, fontWeight:600, textDecoration:'none' }}>
+                <Plus size={14}/> Fazer primeira Ocorrência
               </Link>
             </div>
           ) : (

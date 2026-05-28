@@ -69,10 +69,10 @@ export default function CreateReportPage() {
 
       await reportsApi.criar(fd)
       setSuccess(true)
-      toast.success('Denúncia registrada com sucesso!')
+      toast.success('Ocorrência registrada com sucesso!')
       setTimeout(() => navigate('/'), 2000)
     } catch (err) {
-      toast.error(err.response?.data?.mensagem || 'Erro ao criar denúncia')
+      toast.error(err.response?.data?.mensagem || 'Erro ao criar Ocorrência')
     } finally {
       setLoading(false)
     }
@@ -92,7 +92,7 @@ export default function CreateReportPage() {
         }}>
           <CheckCircle size={36} color="var(--brand)" />
         </div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700 }}>Denúncia registrada!</h2>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700 }}>Ocorrência registrada!</h2>
         <p style={{ color: 'var(--text2)', fontSize: 14 }}>Redirecionando para o mapa...</p>
       </div>
     )
@@ -117,7 +117,7 @@ export default function CreateReportPage() {
         </button>
 
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, marginBottom: 4 }}>
-          Nova Denúncia
+          Nova Ocorrência
         </h1>
         <p style={{ color: 'var(--text2)', fontSize: 13, marginBottom: 28 }}>
           Clique no mapa para marcar o local do problema.
@@ -222,7 +222,7 @@ export default function CreateReportPage() {
             transition: 'all 0.2s',
           }}>
             {loading && <Loader size={16} style={{ animation: 'spin 0.8s linear infinite' }} />}
-            {loading ? 'Enviando...' : 'Registrar Denúncia'}
+            {loading ? 'Enviando...' : 'Registrar Ocorrência'}
           </button>
         </form>
       </div>
