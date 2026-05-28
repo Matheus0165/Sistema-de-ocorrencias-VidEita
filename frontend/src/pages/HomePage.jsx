@@ -66,7 +66,7 @@ export default function HomePage() {
               O VideEita é o canal direto entre cidadãos e órgãos públicos para Ocorrência de forma simples, segura e responsável.
             </p>
             <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
-              <Link to="/nova-denuncia" style={{ display:'inline-flex', alignItems:'center', gap:8, background:'var(--brand)', color:'white', padding:'13px 24px', borderRadius:10, fontSize:15, fontWeight:600, transition:'all .2s', boxShadow:'0 4px 16px rgba(107,63,160,.3)' }}>
+              <Link to="/nova-ocorrencia" style={{ display:'inline-flex', alignItems:'center', gap:8, background:'var(--brand)', color:'white', padding:'13px 24px', borderRadius:10, fontSize:15, fontWeight:600, transition:'all .2s', boxShadow:'0 4px 16px rgba(107,63,160,.3)' }}>
                 Fazer denúncia <ArrowRight size={16}/>
               </Link>
               <a href="#como-funciona" style={{ display:'inline-flex', alignItems:'center', gap:8, background:'var(--bg2)', color:'var(--text)', border:'1px solid var(--border)', padding:'13px 24px', borderRadius:10, fontSize:15, fontWeight:500 }}>
