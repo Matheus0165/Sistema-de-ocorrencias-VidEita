@@ -9,10 +9,10 @@ const iniciar = async () => {
 
   app.listen(PORT, () => {
     console.log('');
-    console.log('🏙️  Urban Reports API  [MySQL + Docker]');
+    console.log('  Urban Reports API  [MySQL + Docker]');
     console.log('─────────────────────────────────────────────────────');
-    console.log(`🚀 API interna em http://localhost:${PORT}`);
-    console.log(`🗄️  Banco: ${process.env.DB_HOST || 'localhost'}/${process.env.DB_NAME || 'base_projeto_integrador'}`);
+    console.log(` API interna em http://localhost:${PORT}`);
+    console.log(`  Banco: ${process.env.DB_HOST || 'localhost'}/${process.env.DB_NAME || 'base_projeto_integrador'}`);
     console.log('─────────────────────────────────────────────────────');
     console.log('');
   });
