@@ -22,7 +22,10 @@ A primeira vez pode demorar, porque o Docker vai baixar as imagens e instalar as
 
 ```bash
 docker compose ps
+
+- re-buid docker compose up --build -d 
 ```
+
 
 Você deve ver serviços parecidos com:
 
