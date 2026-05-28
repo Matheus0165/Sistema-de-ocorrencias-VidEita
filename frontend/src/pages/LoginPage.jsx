@@ -48,7 +48,7 @@ export default function LoginPage() {
             </svg>
           </div>
           <p style={{ fontFamily:'var(--font-display)', fontSize:22, fontWeight:800, color:'var(--brand)', textAlign:'center', marginTop:24, opacity:.4 }}>
-            Vide<span style={{ color:'var(--brand-dark)' }}>Bridge</span>
+            Vide<span style={{ color:'var(--brand-dark)' }}>Eita</span>
           </p>
         </div>
 
