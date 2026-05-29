@@ -1,13 +1,5 @@
 # Sistema de Ocorrência — MySQL + Docker + Nginx
 
-Abrir o projeto no VS Code:
-
-```bash
-code Sistema-de-ocorrencias-VidEita
-```
-
----
-
 ## 1. Rodar tudo de uma vez
 
 Dentro da pasta do projeto:
@@ -15,24 +7,12 @@ Dentro da pasta do projeto:
 ```bash
 docker compose up --build -d
 ```
-
-A primeira vez pode demorar, porque o Docker vai baixar as imagens e instalar as dependências.
-
 ---
 
 ## 2. Verificar se subiu
 
 ```bash
 docker compose ps
-```
-
-Você deve ver serviços parecidos com:
-
-```text
-mysql     Up
-backend   Up
-nginx     Up
-adminer   Up
 ```
 
 Para refazer o build:
@@ -87,9 +67,6 @@ Banco de dados: base_projeto_integrador
 E-mail: admin@prefeitura.gov.br
 Senha: 123456
 ```
-
-> Observação: esse login do site é diferente do usuário do banco MySQL.
-
 ---
 
 ## 5. Comandos úteis
@@ -128,30 +105,6 @@ Ver tabelas:
 
 ```sql
 SHOW TABLES;
-```
-
-Consultar usuários:
-
-```sql
-SELECT * FROM users;
-```
-
-Consultar ocorrências:
-
-```sql
-SELECT * FROM reports;
-```
-
-Consultar ocorrências mais recentes:
-
-```sql
-SELECT * FROM reports ORDER BY criado_em DESC;
-```
-
-Consultar anexos/imagens:
-
-```sql
-SELECT * FROM report_attachments ORDER BY criado_em DESC;
 ```
 
 Parar o projeto:
@@ -195,37 +148,6 @@ Usuário: admin
 Senha: admin123
 Banco: base_projeto_integrador
 ```
-
-Tudo que for alterado no MySQL Workbench usando essa conexão será refletido no site, porque é o mesmo banco usado pelo Docker.
-
----
-
-## 7. Onde as imagens são salvas
-
-As imagens enviadas nas ocorrências ficam em:
-
-```text
-backend/uploads
-```
-
-Dentro do container backend, essa pasta fica em:
-
-```text
-/app/uploads
-```
-
-No navegador, os arquivos podem ser acessados por:
-
-```text
-http://localhost:8080/uploads/nome-do-arquivo
-```
-
-O banco guarda apenas o caminho da imagem na tabela:
-
-```text
-report_attachments
-```
-
 ---
 
 ## 8. Expor o site com ngrok
@@ -271,34 +193,6 @@ Abrir o site online:
 ngrok http 8080
 ```
 
-O link público vai aparecer assim:
-
-```text
-Forwarding  https://algum-link.ngrok-free.dev -> http://localhost:8080
-```
-
-Use o link `https://...ngrok-free.dev` para acessar o sistema pela internet.
-
-Não use ngrok nas portas:
-
-```text
-8081 → Adminer
-3307 → MySQL
-3000 → Backend direto
-```
-
-Use somente:
-
-```text
-8080 → site com Nginx
-```
-
-Para parar o ngrok:
-
-```bash
-CTRL + C
-```
-
 ---
 
 ## 9. Aviso do ngrok
@@ -309,90 +203,6 @@ Isso é normal no plano free.
 
 Para remover esse aviso de forma oficial, é necessário usar uma conta paga do ngrok.
 
----
-
-## 10. Limpar arquivos Zone.Identifier
-
-Listar arquivos:
-
-```bash
-find . -name '*:Zone.Identifier' -type f -print
-```
-
-Apagar arquivos:
-
-```bash
-find . -name '*:Zone.Identifier' -type f -delete
-```
-
----
-
-## 11. Git
-
-Verificar alterações:
-
-```bash
-git status
-```
-
-Adicionar arquivos:
-
-```bash
-git add .
-```
-
-Criar commit:
-
-```bash
-git commit -m "Ajustes finais do projeto"
-```
-
-Enviar para o GitHub:
-
-```bash
-git push origin main
-```
-
-Puxar alterações do GitHub usando rebase:
-
-```bash
-git pull --rebase origin main
-```
-
-Configurar rebase como padrão:
-
-```bash
-git config pull.rebase true
-```
-
----
-
-## 12. Estrutura principal do projeto
-
-```text
-Sistema-de-ocorrencias-VidEita/
-│
-├── backend/
-│   ├── uploads/
-│   ├── src/
-│   └── .env.docker
-│
-├── frontend/
-│   └── src/
-│
-├── database/
-│   └── init/
-│
-├── docker/
-│   ├── backend/
-│   └── nginx/
-│
-├── docker-compose.yml
-├── README.md
-└── .gitignore
-```
-
----
 
 ## 13. Resumo dos acessos
 
