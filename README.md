@@ -7,6 +7,7 @@ Dentro da pasta do projeto:
 ```bash
 docker compose up --build -d
 ```
+
 ---
 
 ## 2. Verificar se subiu
@@ -67,6 +68,7 @@ Banco de dados: base_projeto_integrador
 E-mail: admin@prefeitura.gov.br
 Senha: 123456
 ```
+
 ---
 
 ## 5. Comandos úteis
@@ -148,9 +150,10 @@ Usuário: admin
 Senha: admin123
 Banco: base_projeto_integrador
 ```
+
 ---
 
-## 8. Expor o site com ngrok
+## 7. Expor o site com ngrok
 
 Antes de abrir o ngrok, suba o projeto:
 
@@ -195,7 +198,7 @@ ngrok http 8080
 
 ---
 
-## 9. Aviso do ngrok
+## 8. Aviso do ngrok
 
 No plano gratuito, o ngrok pode mostrar uma tela de aviso antes de abrir o site.
 
@@ -203,8 +206,9 @@ Isso é normal no plano free.
 
 Para remover esse aviso de forma oficial, é necessário usar uma conta paga do ngrok.
 
+---
 
-## 13. Resumo dos acessos
+## 9. Resumo dos acessos
 
 ```text
 Site:
@@ -222,7 +226,7 @@ localhost:3307
 
 ---
 
-## 14. Credenciais principais
+## 10. Credenciais principais
 
 Banco MySQL:
 
